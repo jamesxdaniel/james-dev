@@ -8,6 +8,21 @@
 		<link rel="stylesheet" href="style.min.css">
 		<link rel="shortcut icon" href="favicon.png" sizes="32x32" type="image/png">
         <script src="https://kit.fontawesome.com/7693f8933b.js" crossorigin="anonymous" async></script>
+        <script>
+            // Check if API exists
+            if (document && document.fonts) {    
+              // Do not block page loading
+              setTimeout(function () {           
+                document.fonts.load('16px "DemoFont"').then(() => {
+                  // Make font using elements visible
+                  document.documentElement.classList.add('font-loaded') 
+                })
+              }, 0)
+            } else {
+              // Fallback if API does not exist 
+              document.documentElement.classList.add('font-loaded') 
+            }
+          </script>
 </head>
 <body class="default">
 <div class="loader fx">
